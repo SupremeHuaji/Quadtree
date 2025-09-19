@@ -1,0 +1,199 @@
+///|
+/// 创建一个空四叉树
+pub fn[T] new(boundary : Rect) -> QuadtreeNode[T]
+
+
+///|
+/// 判断点是否在矩形范围内
+pub fn point_in_rect(p : Point, rect : Rect) -> Bool
+
+
+///|
+/// 将矩形分为四个子区域
+pub fn subdivide(rect : Rect) -> Array[Rect]
+
+
+///|
+/// 插入一个点到四叉树
+pub fn[T] insert(
+  node : QuadtreeNode[T],
+  point : Point,
+  value : T,
+  capacity : Int,
+) -> QuadtreeNode[T]
+
+
+///|
+/// 判断两个矩形是否相交
+pub fn rect_intersect(a : Rect, b : Rect) -> Bool
+
+
+///|
+/// 查询四叉树中某个范围内的点
+pub fn[T] query(
+  node : QuadtreeNode[T],
+  range : Rect,
+  result : Array[(Point, T)],
+) -> Unit
+
+
+///|
+/// 清空四叉树，返回空树
+pub fn[T] clear(boundary : Rect) -> QuadtreeNode[T]
+
+
+///|
+/// 统计四叉树中所有点的数量
+pub fn[T] count(node : QuadtreeNode[T]) -> Int
+
+
+///|
+/// 批量插入多个点及内容
+pub fn[T] insert_many(
+  node : QuadtreeNode[T],
+  points : Array[Point],
+  values : Array[T],
+  capacity : Int,
+) -> QuadtreeNode[T]
+
+
+///|
+/// 删除四叉树中的指定点
+pub fn[T] remove(
+  node : QuadtreeNode[T],
+  point : Point,
+  capacity : Int,
+) -> QuadtreeNode[T]
+
+
+///|
+/// 更新四叉树中指定点的内容
+pub fn[T] update(
+  node : QuadtreeNode[T],
+  point : Point,
+  new_value : T,
+  capacity : Int,
+) -> QuadtreeNode[T]
+
+
+///|
+/// 遍历四叉树所有点及内容，收集到数组
+pub fn[T] to_array(node : QuadtreeNode[T], result : Array[(Point, T)]) -> Unit
+
+
+///|
+/// 删除某一区域内的所有点
+pub fn[T] remove_range(
+  node : QuadtreeNode[T],
+  range : Rect,
+  capacity : Int,
+) -> QuadtreeNode[T]
+
+
+///|
+/// 节点合并与压缩：如果所有子节点都是空Leaf，则合并为一个空Leaf
+pub fn[T] compress_node(node : QuadtreeNode[T]) -> QuadtreeNode[T]
+
+
+///|
+/// 查找某个点的内容
+pub fn[T : Eq] find(node : QuadtreeNode[T], point : Point) -> T?
+
+
+///|
+/// 统计四叉树的最大深度
+pub fn[T] depth(node : QuadtreeNode[T]) -> Int
+
+
+///|
+/// 批量查询多个区域
+pub fn[T] query_many(
+  node : QuadtreeNode[T],
+  ranges : Array[Rect],
+) -> Array[(Point, T)]
+
+
+///|
+/// 统计 Leaf 和 Internal 节点数量
+pub fn[T] count_nodes(node : QuadtreeNode[T]) -> (Int, Int)
+
+
+///|
+/// 找出最近的 K 个点 (K-Nearest Neighbors)
+pub fn[T] find_nearest(
+  node : QuadtreeNode[T],
+  target : Point,
+  k : Int,
+) -> Array[(Point, T, Float)]
+
+
+///|
+/// 查找密度最高的区域
+pub fn[T] find_hotspot(node : QuadtreeNode[T], grid_size : Int) -> (Rect, Int)
+
+
+///|
+/// 计算空间自相关性（类似Moran's I）
+pub fn[T : ToFloat] spatial_autocorrelation(node : QuadtreeNode[T]) -> Float
+
+
+///|
+/// 合并两个四叉树
+pub fn[T] merge(
+  tree1 : QuadtreeNode[T],
+  tree2 : QuadtreeNode[T],
+  capacity : Int,
+) -> QuadtreeNode[T]
+
+
+///|
+/// 差集操作 - 从tree1中移除tree2中存在的点
+pub fn[T] difference(
+  tree1 : QuadtreeNode[T],
+  tree2 : QuadtreeNode[T],
+  capacity : Int,
+) -> QuadtreeNode[T]
+
+
+///|
+/// 根据条件筛选点
+pub fn[T] filter(
+  node : QuadtreeNode[T],
+  predicate : (Point, T) -> Bool,
+  capacity : Int,
+) -> QuadtreeNode[T]
+
+
+///|
+/// 序列化四叉树为JSON格式字符串
+pub fn[T : Show] serialize(node : QuadtreeNode[T]) -> String
+
+
+///|
+/// 相交操作 - 找出两个四叉树共有的点
+pub fn[T] intersection(
+  tree1 : QuadtreeNode[T],
+  tree2 : QuadtreeNode[T],
+  capacity : Int,
+) -> QuadtreeNode[T]
+
+
+///|
+/// 使用DBSCAN算法进行点云聚类
+pub fn[T] dbscan_cluster(
+  node : QuadtreeNode[T],
+  eps : Float,
+  min_points : Int,
+) -> Array[Array[Point]]
+
+
+///|
+/// 基于点的分布密度自适应划分
+pub fn[T] insert_adaptive(
+  node : QuadtreeNode[T],
+  point : Point,
+  value : T,
+  min_capacity : Int,
+  max_capacity : Int,
+  density_threshold : Float,
+) -> QuadtreeNode[T]
