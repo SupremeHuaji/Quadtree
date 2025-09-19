@@ -1,10 +1,6 @@
-以下是翻译成中文的完整 README 文件，确保内容清晰、示例独立完整，并符合 MoonBit 的代码规范：
-
----
-
 # 四叉树 (Quadtree)
 
-[English](https://github.com/moonbit-community/Quadtree/blob/master/README.md) | [简体中文](https://github.com/moonbit-community/Quadtree/blob/master/README_zh_CN.md)
+[English](https://github.com/moonbit-community/Quadtree/blob/main/README.md) | [简体中文](https://github.com/moonbit-community/Quadtree/blob/main/README_zh_CN.md)
 
 一个高性能的空间数据结构实现，基于 MoonBit 提供高效的点存储和复杂几何查询功能，适用于 2D 空间数据。
 

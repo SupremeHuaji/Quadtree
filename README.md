@@ -1,7 +1,3 @@
-以下是重新生成的完整 README 文件，确保内容清晰、示例独立完整，并符合 MoonBit 的代码规范：
-
----
-
 # Quadtree
 
 [English](https://github.com/moonbit-community/Quadtree/blob/main/README.md) | [简体中文](https://github.com/moonbit-community/Quadtree/blob/main/README_zh_CN.md)
